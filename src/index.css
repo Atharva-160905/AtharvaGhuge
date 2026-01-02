@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-moxa-white dark:bg-dark-950 text-moxa-black dark:text-neutral-300 antialiased overflow-x-hidden transition-colors duration-300;
+    /* Selection Color */
+    @apply selection:bg-primary-500/30 selection:text-primary-600 dark:selection:text-primary-400;
+  }
+
+  /* Clean background - Removing noise for "super smooth" performance request */
+
+}
+
+/* Custom Scrollbar - Minimal & Dark */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#F4F4F0] dark:bg-[#050505];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#D4D4D0] dark:bg-[#262626];
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#FF4D00] dark:bg-[#404040];
+}
+
+/* Component Classes for Premium feel */
+@layer components {
+  .btn-primary {
+    @apply relative overflow-hidden bg-white text-black font-bold uppercase tracking-wide rounded-none px-8 py-4 transition-all duration-300 hover:bg-primary-500 hover:text-white hover:shadow-[0_0_20px_#FF4D0066];
+  }
+
+  .btn-outline {
+    @apply relative overflow-hidden bg-transparent border border-white/20 text-white font-bold uppercase tracking-wide rounded-none px-8 py-4 transition-all duration-300 hover:border-primary-500 hover:text-primary-500;
+  }
+
+  /* Text Gradient */
+  .text-gradient-orange {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+}
