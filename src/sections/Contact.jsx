@@ -24,8 +24,8 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">Email Me</h4>
-                                    <a href="mailto:hello@atharva.dev" className="text-lg font-bold text-moxa-black dark:text-white hover:text-primary-500 transition-colors">
-                                        hello@atharva.dev
+                                    <a href="mailto:atharvaghuge16@gmail.com" className="text-lg font-bold text-moxa-black dark:text-white hover:text-primary-500 transition-colors">
+                                        atharvaghuge16@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -37,7 +37,7 @@ export default function Contact() {
                                 <div>
                                     <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">Location</h4>
                                     <p className="text-lg font-bold text-moxa-black dark:text-white">
-                                        Remote / Worldwide
+                                        Pune
                                     </p>
                                 </div>
                             </div>

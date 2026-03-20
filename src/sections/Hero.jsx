@@ -67,8 +67,8 @@ const Hero = () => {
                         className="mt-8 flex items-center gap-8 text-neutral-500"
                     >
                         {[
-                            { icon: Github, href: "https://github.com" },
-                            { icon: Linkedin, href: "https://linkedin.com" },
+                            { icon: Github, href: "https://github.com/Atharva-160905" },
+                            { icon: Linkedin, href: "https://www.linkedin.com/in/atharvaghuge/" },
                             { icon: FileText, href: "#", label: "Resume" }
                         ].map((item, index) => (
                             <a

@@ -4,25 +4,20 @@ import SectionWrapper from '../components/SectionWrapper';
 
 const experiences = [
     {
-        role: "Senior Full Stack Dev",
-        company: "Tech Corp",
-        period: "2023 - Present",
-        description: "Leading a team of 5 developers building cloud-native applications using React, Node.js, and AWS.",
-        skills: ["React", "AWS", "Node.js"]
+        role: "Frontend Developer Intern",
+        company: "Mendygo",
+        period: "11/2025 - Present",
+        description: "Implemented 30+ dashboard screens from provided Figma designs using React. Developed role-based dashboards for HR, Admin, and Intern portals with focus on usability and responsive layouts.",
+        skills: ["React", "Figma", "GitHub"],
+        link: "https://mendygo.com/"
     },
     {
-        role: "Software Developer",
-        company: "Innovation Labs",
-        period: "2021 - 2023",
-        description: "Developed and maintained multiple high-traffic web applications. Improved performance by 40%.",
-        skills: ["Vue.js", "Python", "Docker"]
-    },
-    {
-        role: "Web Developer Intern",
-        company: "StartUp Inc",
-        period: "2020 - 2021",
-        description: "Collaborated with design team to implement responsive user interfaces and interactive components.",
-        skills: ["HTML/CSS", "JavaScript", "React"]
+        role: "Product & Operations Intern",
+        company: "TheSubscription",
+        period: "11/2024 - 09/2025",
+        description: "Assisted in product planning and SRS documentation. Created and executed test cases, performed functional testing and UI validation. Managed and reviewed application dashboards.",
+        skills: ["Product Planning", "Testing", "Operations"],
+        link: "https://thesubscription.in/"
     }
 ];
 
@@ -48,7 +43,15 @@ export default function Experience() {
 
                                 <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
                                     <h3 className="text-2xl md:text-3xl font-bold text-moxa-black dark:text-white uppercase tracking-tight">
-                                        {exp.role} <span className="text-primary-500 mx-2">@</span> {exp.company}
+                                        {exp.role} <span className="text-primary-500 mx-2">@</span> 
+                                        {exp.link ? (
+                                            <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500 transition-colors inline-flex relative group/link">
+                                                {exp.company}
+                                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover/link:w-full"></span>
+                                            </a>
+                                        ) : (
+                                            exp.company
+                                        )}
                                     </h3>
                                     <span className="text-sm font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-2 md:mt-0">
                                         {exp.period}
