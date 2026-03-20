@@ -26,7 +26,7 @@ export default function Experience() {
         <section className="py-32 relative" id="experience">
             <div className="container mx-auto px-6 relative z-10">
                 <SectionWrapper className="mb-24 flex flex-col items-start border-l-4 border-primary-500 pl-6">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-moxa-black dark:text-white mb-2">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-moxa-black dark:text-white mb-2">
                         Experience<span className="text-primary-500">.</span>
                     </h2>
                     <p className="text-neutral-500 text-xl font-medium tracking-wide">
@@ -42,7 +42,7 @@ export default function Experience() {
                                 <div className="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-neutral-300 dark:bg-neutral-700 rounded-full group-hover:bg-primary-500 transition-colors duration-300"></div>
 
                                 <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
-                                    <h3 className="text-2xl md:text-3xl font-bold text-moxa-black dark:text-white uppercase tracking-tight">
+                                    <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-moxa-black dark:text-white uppercase tracking-tight leading-tight">
                                         {exp.role} <span className="text-primary-500 mx-2">@</span> 
                                         {exp.link ? (
                                             <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:text-primary-500 transition-colors inline-flex relative group/link">

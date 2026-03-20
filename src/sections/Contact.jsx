@@ -9,7 +9,7 @@ export default function Contact() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
                     {/* Left: Contact Info */}
                     <SectionWrapper>
-                        <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-moxa-black dark:text-white mb-6">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-moxa-black dark:text-white mb-6">
                             Let's <span className="text-neutral-500">Talk</span><span className="text-primary-500">.</span>
                         </h2>
 

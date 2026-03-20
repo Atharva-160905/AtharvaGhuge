@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <section className="relative flex items-start justify-center overflow-hidden pt-4 md:pt-12 pb-20 bg-moxa-white dark:bg-dark-950 transition-colors duration-300">
-            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start relative z-10">
+        <section className="relative flex flex-col justify-center overflow-x-hidden overflow-y-auto min-h-[calc(100vh-6rem)] lg:h-[calc(100vh-6rem)] bg-moxa-white dark:bg-dark-950 transition-colors duration-300">
+            <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-4 lg:gap-8 items-center relative z-10 py-6">
                 {/* Left Content - Typography */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter uppercase leading-[0.9] text-moxa-black dark:text-white mb-6"
+                            className="text-[12vw] sm:text-5xl md:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tighter uppercase leading-[0.8] text-moxa-black dark:text-white mb-2 md:mb-4"
                         >
                             HI, I'M <br />
                             <span className="text-neutral-500">ATHARVA.</span>
@@ -29,33 +29,33 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="flex flex-wrap items-center gap-x-6 text-2xl md:text-4xl font-bold uppercase tracking-tight text-moxa-black/90 dark:text-white/90"
+                            className="flex flex-col xl:flex-row xl:items-center gap-2 xl:gap-6 text-xl md:text-3xl font-bold uppercase tracking-tight text-moxa-black/90 dark:text-white/90"
                         >
                             <span>Creative</span>
                             <Asterisk className="w-8 h-8 md:w-10 md:h-10 text-primary-500 animate-spin-slow" />
                             <span>Developer</span>
                         </motion.div>
 
-                        <motion.div
+                        <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="text-lg md:text-xl font-bold uppercase tracking-widest text-neutral-400 mt-4 border-t border-neutral-200 dark:border-neutral-800 pt-4 w-max"
+                            className="text-base sm:text-lg text-neutral-600 dark:text-neutral-400 max-w-lg mt-4 font-medium leading-relaxed border-t border-neutral-200 dark:border-neutral-800 pt-4 block"
                         >
-                            Design <span className="text-primary-500 mx-2">*</span> Development <span className="text-primary-500 mx-2">*</span> Innovation
-                        </motion.div>
+                            I engineer high-performance, scalable web applications by merging modern design with robust <span className="text-moxa-black dark:text-white font-bold">full-stack architecture</span>. From real-time platforms to responsive interactive experiences, I turn complex challenges into seamless digital solutions.
+                        </motion.p>
                     </div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
-                        className="flex flex-col sm:flex-row gap-0 w-max"
+                        className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6 relative z-20 w-full sm:w-max"
                     >
-                        <Link to="/projects" className="px-8 py-4 bg-moxa-black dark:bg-white text-white dark:text-moxa-black font-bold uppercase tracking-wider text-sm hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white transition-colors duration-300">
+                        <Link to="/projects" className="w-full sm:w-auto text-center px-8 py-3 bg-moxa-black dark:bg-white text-white dark:text-moxa-black font-bold uppercase tracking-wider text-sm hover:bg-primary-500 dark:hover:bg-primary-500 hover:text-white transition-colors duration-300">
                             Got a project?
                         </Link>
-                        <Link to="/contact" className="px-8 py-4 border border-moxa-black dark:border-white text-moxa-black dark:text-white font-bold uppercase tracking-wider text-sm hover:bg-moxa-black dark:hover:bg-white hover:text-white dark:hover:text-moxa-black transition-colors duration-300">
+                        <Link to="/contact" className="w-full sm:w-auto text-center px-8 py-3 border border-moxa-black dark:border-white text-moxa-black dark:text-white font-bold uppercase tracking-wider text-sm hover:bg-moxa-black dark:hover:bg-white hover:text-white dark:hover:text-moxa-black transition-colors duration-300">
                             Let's Talk
                         </Link>
                     </motion.div>
@@ -69,12 +69,12 @@ const Hero = () => {
                         {[
                             { icon: Github, href: "https://github.com/Atharva-160905" },
                             { icon: Linkedin, href: "https://www.linkedin.com/in/atharvaghuge/" },
-                            { icon: FileText, href: "#", label: "Resume" }
+                            { icon: FileText, href: "/Atharva_Ghuge_Resume.pdf", label: "Resume" }
                         ].map((item, index) => (
                             <a
                                 key={index}
                                 href={item.href}
-                                target={item.label ? "_self" : "_blank"}
+                                target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-primary-500 transition-colors duration-300 transform hover:scale-110 flex items-center gap-2"
                             >
@@ -90,9 +90,9 @@ const Hero = () => {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="order-1 lg:order-2 flex items-center justify-center relative"
+                    className="order-1 lg:order-2 flex items-center justify-center relative mb-12 lg:mb-0"
                 >
-                    <div className="relative w-full max-w-sm lg:max-w-md aspect-[4/5] mx-auto -mt-12 lg:-mt-20">
+                    <div className="relative w-full max-w-sm lg:max-w-md aspect-[4/5] mx-auto">
                         {/* Decorative Background Elements */}
                         <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-500/20 rounded-full blur-2xl"></div>
 

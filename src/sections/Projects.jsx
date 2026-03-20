@@ -36,7 +36,7 @@ export default function Projects() {
             <div className="container mx-auto px-6 relative z-10">
                 {/* Heading */}
                 <div className="mb-32">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase mb-4 tracking-tighter text-moxa-black dark:text-white">
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase mb-4 tracking-tighter text-moxa-black dark:text-white">
                         Selected <span className="text-neutral-500">Works</span><span className="text-primary-500">.</span>
                     </h2>
                     <div className="h-1 w-20 bg-primary-500 rounded-full" />
@@ -49,7 +49,7 @@ export default function Projects() {
                                 ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
 
                                 {/* Background Number Decoration */}
-                                <span className={`absolute -top-16 lg:-top-24 text-[12rem] lg:text-[16rem] font-black text-neutral-200/40 dark:text-neutral-800/20 select-none pointer-events-none z-0
+                                <span className={`absolute -top-16 lg:-top-24 text-[8rem] md:text-[12rem] lg:text-[16rem] font-black text-neutral-200/40 dark:text-neutral-800/20 select-none pointer-events-none z-0
                                     ${index % 2 === 0 ? 'right-0 lg:-right-10' : 'left-0 lg:-left-10'}`}>
                                     {String(index + 1).padStart(2, '0')}
                                 </span>
@@ -87,7 +87,7 @@ export default function Projects() {
                                         <span className="text-primary-500 font-bold uppercase tracking-widest text-xs group-hover:tracking-[0.2em] transition-all duration-300">Featured Project</span>
                                     </div>
 
-                                    <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-moxa-black dark:text-white mb-6 group-hover:text-primary-500 transition-colors duration-300">
+                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tight text-moxa-black dark:text-white mb-6 group-hover:text-primary-500 transition-colors duration-300">
                                         {project.title}
                                     </h3>
 
@@ -105,12 +105,12 @@ export default function Projects() {
                                         ))}
                                     </div>
 
-                                    <div className="flex items-center gap-4">
+                                    <div className="flex flex-col sm:flex-row sm:items-center gap-4 w-full md:w-auto">
                                         <a
                                             href={project.github}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="px-6 py-4 border border-moxa-black dark:border-white rounded-none text-sm font-bold uppercase tracking-wider text-moxa-black dark:text-white hover:bg-moxa-black dark:hover:bg-white hover:text-white dark:hover:text-moxa-black transition-all flex items-center gap-2"
+                                            className="w-full sm:w-auto justify-center px-6 py-4 border border-moxa-black dark:border-white rounded-none text-sm font-bold uppercase tracking-wider text-moxa-black dark:text-white hover:bg-moxa-black dark:hover:bg-white hover:text-white dark:hover:text-moxa-black transition-all flex items-center gap-2"
                                         >
                                             <Github className="w-5 h-5" /> Code
                                         </a>
@@ -118,7 +118,7 @@ export default function Projects() {
                                             href={project.demo}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="btn-primary flex items-center gap-2 py-4 px-6 text-sm group/btn bg-moxa-black dark:bg-white text-white dark:text-moxa-black"
+                                            className="btn-primary w-full sm:w-auto justify-center flex items-center gap-2 py-4 px-6 text-sm group/btn bg-moxa-black dark:bg-white text-white dark:text-moxa-black"
                                         >
                                             Live Demo <ExternalLink className="w-5 h-5 group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1 transition-transform" /> 
                                         </a>
