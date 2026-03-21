@@ -32,8 +32,9 @@ export default function Navbar() {
     }, [location]);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-moxa-white/90 dark:bg-dark-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800' : 'bg-transparent border-b border-transparent'}`}>
-            <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+        <>
+            <nav className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? 'bg-moxa-white/90 dark:bg-dark-950/90 backdrop-blur-md border-b border-neutral-200 dark:border-neutral-800' : 'bg-transparent border-b border-transparent'}`}>
+                <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                 <NavLink to="/" className="flex items-center gap-2 group relative z-50">
                     <span className="text-xl font-black tracking-tighter text-moxa-black dark:text-white group-hover:text-primary-500 transition-colors uppercase">
                         Atharva<span className="text-primary-500">.</span>
@@ -94,7 +95,9 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Nav Overlay */}
+            </nav>
+
+            {/* Mobile Nav Overlay - Extracted from nav to prevent backdrop-filter containing block bugs */}
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
@@ -102,9 +105,9 @@ export default function Navbar() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="fixed inset-0 top-0 bg-moxa-white dark:bg-dark-950 z-40 flex items-center justify-center md:hidden"
+                        className="fixed inset-0 bg-moxa-white dark:bg-dark-950 z-40 flex flex-col items-center justify-center md:hidden"
                     >
-                        <div className="flex flex-col items-center gap-8">
+                        <div className="flex flex-col items-center gap-8 pt-20">
                             {navLinks.map((link, index) => (
                                 <motion.div
                                     key={link.name}
@@ -126,6 +129,6 @@ export default function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

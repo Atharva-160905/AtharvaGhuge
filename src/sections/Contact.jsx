@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
-import { Send, Mail, MapPin } from 'lucide-react';
+import { Send, Mail, MapPin, Linkedin } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
 
 export default function Contact() {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const subject = formData.get('subject') || 'New message from portfolio';
+        const message = formData.get('message') || '';
+        
+        // Open directly in Gmail web interface (bypasses Windows native Mail app requirement)
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=atharvaghuge16@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        window.open(gmailLink, '_blank');
+    };
+
     return (
         <section className="py-10 md:py-20 relative" id="contact">
             <div className="container mx-auto px-6 relative z-10">
@@ -41,17 +54,31 @@ export default function Contact() {
                                     </p>
                                 </div>
                             </div>
+
+                            <div className="flex items-start gap-4 group">
+                                <div className="p-3 bg-white dark:bg-dark-900 border border-neutral-200 dark:border-neutral-800 group-hover:border-primary-500 transition-colors duration-300">
+                                    <Linkedin className="w-5 h-5 text-moxa-black dark:text-white group-hover:text-primary-500 transition-colors" />
+                                </div>
+                                <div>
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/atharvaghuge/" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-moxa-black dark:text-white hover:text-primary-500 transition-colors">
+                                        atharvaghuge
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </SectionWrapper>
 
                     {/* Right: Form */}
                     <SectionWrapper delay={0.2}>
-                        <form className="space-y-4">
+                        <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div className="space-y-1">
                                     <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Name</label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        required
                                         className="w-full bg-neutral-50 dark:bg-dark-900 border border-neutral-200 dark:border-neutral-800 text-moxa-black dark:text-white px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-medium rounded-none text-sm"
                                         placeholder="JOHN DOE"
                                     />
@@ -60,6 +87,8 @@ export default function Contact() {
                                     <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Email</label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        required
                                         className="w-full bg-neutral-50 dark:bg-dark-900 border border-neutral-200 dark:border-neutral-800 text-moxa-black dark:text-white px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-medium rounded-none text-sm"
                                         placeholder="JOHN@EXAMPLE.COM"
                                     />
@@ -70,6 +99,8 @@ export default function Contact() {
                                 <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Subject</label>
                                 <input
                                     type="text"
+                                    name="subject"
+                                    required
                                     className="w-full bg-neutral-50 dark:bg-dark-900 border border-neutral-200 dark:border-neutral-800 text-moxa-black dark:text-white px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-medium rounded-none text-sm"
                                     placeholder="PROJECT INQUIRY"
                                 />
@@ -78,6 +109,8 @@ export default function Contact() {
                             <div className="space-y-1">
                                 <label className="text-[10px] font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">Message</label>
                                 <textarea
+                                    name="message"
+                                    required
                                     rows="4"
                                     className="w-full bg-neutral-50 dark:bg-dark-900 border border-neutral-200 dark:border-neutral-800 text-moxa-black dark:text-white px-4 py-3 focus:outline-none focus:border-primary-500 transition-colors placeholder:text-neutral-400 dark:placeholder:text-neutral-600 font-medium resize-none rounded-none text-sm"
                                     placeholder="TELL ME ABOUT YOUR PROJECT..."
