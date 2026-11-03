@@ -35,15 +35,16 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Inter', 'sans-serif'], // Use Inter for now, ensure bold weight is used
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        // Removed heavy noise SVG for performance. Using a cleaner look or very subtle CSS noise if needed.
       },
       animation: {
         'blob': 'blob 7s infinite',
+        'spin-slow': 'spin 12s linear infinite',
       },
       keyframes: {
         blob: {

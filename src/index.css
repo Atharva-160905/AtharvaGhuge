@@ -8,13 +8,14 @@
   }
 
   body {
-    @apply bg-moxa-white dark:bg-dark-950 text-moxa-black dark:text-neutral-300 antialiased overflow-x-hidden transition-colors duration-300;
+    @apply bg-moxa-white dark:bg-dark-950 text-moxa-black dark:text-neutral-300 font-sans antialiased overflow-x-hidden transition-colors duration-300;
     /* Selection Color */
     @apply selection:bg-primary-500/30 selection:text-primary-600 dark:selection:text-primary-400;
   }
 
-  /* Clean background - Removing noise for "super smooth" performance request */
-
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
 }
 
 /* Custom Scrollbar - Minimal & Dark */
@@ -38,11 +39,11 @@
 /* Component Classes for Premium feel */
 @layer components {
   .btn-primary {
-    @apply relative overflow-hidden bg-white text-black font-bold uppercase tracking-wide rounded-none px-8 py-4 transition-all duration-300 hover:bg-primary-500 hover:text-white hover:shadow-[0_0_20px_#FF4D0066];
+    @apply relative overflow-hidden bg-moxa-black text-white dark:bg-white dark:text-moxa-black font-bold uppercase tracking-wider rounded-xl px-7 py-3.5 transition-all duration-300 hover:bg-primary-500 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white hover:shadow-lg hover:shadow-primary-500/20;
   }
 
   .btn-outline {
-    @apply relative overflow-hidden bg-transparent border border-white/20 text-white font-bold uppercase tracking-wide rounded-none px-8 py-4 transition-all duration-300 hover:border-primary-500 hover:text-primary-500;
+    @apply relative overflow-hidden bg-transparent border border-neutral-300 dark:border-neutral-700 text-moxa-black dark:text-white font-bold uppercase tracking-wider rounded-xl px-7 py-3.5 transition-all duration-300 hover:border-moxa-black dark:hover:border-white hover:bg-neutral-100 dark:hover:bg-dark-900;
   }
 
   /* Text Gradient */
