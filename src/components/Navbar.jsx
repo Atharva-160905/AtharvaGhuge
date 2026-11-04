@@ -26,10 +26,9 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close mobile menu on route change and scroll to top
+    // Close mobile menu on route change
     useEffect(() => {
         setIsOpen(false);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [location.pathname]);
 
     // Lock body scroll when mobile menu is open
