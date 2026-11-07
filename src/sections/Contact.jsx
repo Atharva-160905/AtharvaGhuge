@@ -11,9 +11,14 @@ export default function Contact() {
         const subject = formData.get('subject') || 'New message from portfolio';
         const message = formData.get('message') || '';
         
-        // Open directly in Gmail web interface
-        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=atharvaghuge16@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-        window.open(gmailLink, '_blank');
+        // Open directly in Gmail web interface with seamless mailto fallback
+        const bodyContent = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=atharvaghuge16@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+        
+        const popup = window.open(gmailLink, '_blank');
+        if (!popup || popup.closed || typeof popup.closed === 'undefined') {
+            window.location.href = `mailto:atharvaghuge16@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+        }
     };
 
     return (

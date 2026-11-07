@@ -34,7 +34,7 @@ const projects = [
         category: "AI & Healthcare",
         urlDisplay: "medlink-2026.vercel.app",
         status: "Production Live",
-        description: "A secure medical exchange and intelligence platform. Enables patients to upload health documents, leveraging OCR text extraction and Google Gemini API to generate patient-friendly clinical summaries.",
+        description: "A secure medical exchange and intelligence platform built for Smart India Hackathon. Enables patients to upload health documents, leveraging OCR text extraction and Google Gemini API to generate patient-friendly clinical summaries.",
         highlights: [
             "OCR document processing with Gemini API clinical analysis",
             "End-to-end encrypted health record storage on Supabase",
@@ -43,7 +43,7 @@ const projects = [
         tags: ["Supabase", "React 19", "Gemini API", "OCR", "Antigravity"],
         github: "https://github.com/Atharva-160905/Medlink-2026",
         demo: "https://medlink-2026.vercel.app/",
-        image: "/images/Medlink.png"
+        image: "/images/MedLink AI Healthcare Showcase.png"
     },
     {
         id: "sundrip",
@@ -63,12 +63,51 @@ const projects = [
         tags: ["React", "Node.js", "Express.js", "MongoDB", "Razorpay"],
         github: "https://github.com/Atharva-160905/SunDrip",
         demo: "https://sun-drip.vercel.app/",
-        image: null,
-        isCustomGraphic: true
+        image: "/images/SunDrip E-Commerce Laptop Mockup.png"
+    },
+    {
+        id: "aimersmedia",
+        num: "03",
+        title: "AimersMedia Agency",
+        shortTitle: "AimersMedia",
+        badge: "Dramsve • Production Client Site",
+        category: "Creative Frontend & SSR",
+        urlDisplay: "aimers-media.vercel.app",
+        status: "Client Production",
+        description: "The official agency platform for AimersMedia engineered as sole developer during internship at Dramsve. Built with Next.js App Router for SEO-optimized server-side rendering and GSAP animations for fluid interactions.",
+        highlights: [
+            "Engineered complete UI & animations as sole developer at Dramsve",
+            "SEO-optimized Server-Side Rendering (SSR) via Next.js App Router",
+            "High-framerate GSAP motion design and responsive custom typography"
+        ],
+        tags: ["Next.js", "GSAP", "React", "Tailwind CSS", "Vercel"],
+        github: "https://github.com/Atharva-160905",
+        demo: "https://aimers-media.vercel.app/",
+        image: "/images/Aimers Media Laptop Showcase.png"
+    },
+    {
+        id: "robotic-joint-care",
+        num: "04",
+        title: "Robotic Joint Care Institute",
+        shortTitle: "Dr. Kasliwal Institute",
+        badge: "Dr. Kasliwal • Hospital Platform",
+        category: "Healthcare & Enterprise",
+        urlDisplay: "dr-kasliwal.vercel.app",
+        status: "Production Live",
+        description: "End-to-end web platform designed and architected for Dr. Kasliwal's Robotic Joint Care Institute, a multispeciality orthopedic hospital. Features treatment discovery, patient appointment scheduling, robotic surgery showcase, and consultation workflows.",
+        highlights: [
+            "End-to-end hospital web architecture from design to full-stack development",
+            "Patient appointment booking and interactive surgical procedure walkthroughs",
+            "Optimized clinical accessibility, fast load times, and mobile responsive layouts"
+        ],
+        tags: ["Next.js", "React", "Tailwind CSS", "UI/UX Architecture", "Vercel"],
+        github: "https://github.com/Atharva-160905",
+        demo: "https://dr-kasliwal.vercel.app/",
+        image: "/images/Robotic Joint Care Institute Website Mockup.png"
     },
     {
         id: "webrtc",
-        num: "03",
+        num: "05",
         title: "WebRTC File Sharing",
         shortTitle: "WebRTC P2P",
         badge: "Real-Time P2P Protocol",
@@ -88,8 +127,8 @@ const projects = [
     },
     {
         id: "ecell",
-        num: "04",
-        title: "College Event Platforms",
+        num: "06",
+        title: "E-Cell SKNCOE Platforms",
         shortTitle: "E-Cell 3D Web",
         badge: "Interactive 3D Web • E-Cell",
         category: "Creative Frontend & 3D",
@@ -104,7 +143,7 @@ const projects = [
         tags: ["React", "Three.js", "Tailwind CSS", "JavaScript", "GSAP"],
         github: "https://github.com/Vedant159357/Ecell-2026",
         demo: "https://iicecellskncoe.com/",
-        image: "/images/Ecell.png"
+        image: "/images/E-Cell SKNCOE Web Showcase.png"
     }
 ];
 
@@ -159,7 +198,7 @@ export default function Projects() {
                             }`}
                         >
                             <LayoutGrid className="w-3.5 h-3.5" />
-                            <span>Grid (4)</span>
+                            <span>Grid (6)</span>
                         </button>
                     </div>
                 </div>
@@ -168,7 +207,7 @@ export default function Projects() {
                 {viewMode === 'spotlight' && (
                     <div className="flex flex-col gap-5">
                         {/* Project Navigation Tabs */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5">
                             {projects.map((proj, idx) => {
                                 const isCurrent = idx === activeIndex;
                                 return (
@@ -215,7 +254,7 @@ export default function Projects() {
                                                     {activeProject.badge}
                                                 </span>
                                                 <span className="text-[10px] font-mono font-bold text-neutral-500 dark:text-neutral-400">
-                                                    PROJECT {activeProject.num} OF 04
+                                                    PROJECT {activeProject.num} OF 06
                                                 </span>
                                             </div>
 
@@ -425,9 +464,9 @@ export default function Projects() {
                     </div>
                 )}
 
-                {/* GRID VIEW (Compact 2x2 Bento Matrix) */}
+                {/* GRID VIEW (Compact Bento Matrix) */}
                 {viewMode === 'grid' && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
                         {projects.map((proj, idx) => (
                             <div
                                 key={proj.id}

@@ -143,6 +143,8 @@ export default function About() {
 
     const filteredCategories = selectedCategory === "all" 
         ? skillCategories 
+        : selectedCategory === "tools"
+        ? skillCategories.filter(c => c.id === "tools" || c.id === "engineering_practice")
         : skillCategories.filter(c => c.id === selectedCategory);
 
     return (
@@ -170,7 +172,7 @@ export default function About() {
                                     : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                             }`}
                         >
-                            All Domains
+                            All
                         </button>
                         <button
                             onClick={() => setSelectedCategory("frontend")}
@@ -180,7 +182,7 @@ export default function About() {
                                     : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                             }`}
                         >
-                            Frontend & 3D
+                            Frontend
                         </button>
                         <button
                             onClick={() => setSelectedCategory("backend")}
@@ -190,7 +192,7 @@ export default function About() {
                                     : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                             }`}
                         >
-                            Backend & APIs
+                            Backend
                         </button>
                         <button
                             onClick={() => setSelectedCategory("languages")}
@@ -200,7 +202,27 @@ export default function About() {
                                     : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                             }`}
                         >
+                            Languages
+                        </button>
+                        <button
+                            onClick={() => setSelectedCategory("core_cs")}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all font-display ${
+                                selectedCategory === "core_cs"
+                                    ? "bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 shadow-xs"
+                                    : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+                            }`}
+                        >
                             Core CS
+                        </button>
+                        <button
+                            onClick={() => setSelectedCategory("tools")}
+                            className={`px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all font-display ${
+                                selectedCategory === "tools"
+                                    ? "bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 shadow-xs"
+                                    : "text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+                            }`}
+                        >
+                            Tools & DevOps
                         </button>
                     </div>
                 </div>

@@ -16,10 +16,10 @@ export default function Home() {
         {
             title: "Selected Projects",
             subtitle: "PRODUCTION APPS & SYSTEMS",
-            description: "From MedLink (Smart India Hackathon OCR & AI platform) to SunDrip full-stack e-commerce with Razorpay payments and WebRTC P2P transfers.",
+            description: "From MedLink (Smart India Hackathon OCR & AI platform) to SunDrip e-commerce, AimersMedia agency, Robotic Joint Care platform, and WebRTC P2P transfers.",
             icon: FolderGit2,
-            stats: "4 Featured Deployments",
-            tags: ["MedLink (SIH)", "SunDrip E-Commerce", "WebRTC P2P", "3D Event Sites"],
+            stats: "6 Featured Deployments",
+            tags: ["MedLink (SIH)", "SunDrip Store", "AimersMedia", "Joint Care", "WebRTC P2P", "E-Cell 3D"],
             link: "/projects",
             linkText: "View All Projects",
             color: "group-hover:border-primary-500"

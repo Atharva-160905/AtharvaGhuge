@@ -11,12 +11,12 @@ const experiences = [
         period: "10/2026 – Present",
         location: "Remote",
         badge: "Active Role",
-        link: "https://aimersmedia.com",
+        link: "https://aimers-media.vercel.app/",
         highlights: [
             "Designed and developed AimersMedia (social media agency website) as the sole developer, using Next.js for SEO-optimized SSR and GSAP for rich, fluid animations.",
-            "Handed over production deployment on Vercel to the client for launch on their own custom domain.",
+            "Handed over production deployment on Vercel to the client (aimers-media.vercel.app).",
             "Shipped critical UI revamps and bug fixes on MyTestCart (platform for NEET aspirants outside India).",
-            "Currently architecting and developing an end-to-end web portal for a multispeciality hospital from design to deployment."
+            "Architected and developed the full web platform for Dr. Kasliwal's Robotic Joint Care Institute (dr-kasliwal.vercel.app) from design to deployment."
         ],
         skills: ["Next.js", "GSAP", "React", "Vercel", "Tailwind CSS"],
         stat: "Sole Developer • Next.js & GSAP"
