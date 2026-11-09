@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
     ExternalLink, 
@@ -43,7 +43,7 @@ const projects = [
         tags: ["Supabase", "React 19", "Gemini API", "OCR", "Antigravity"],
         github: "https://github.com/Atharva-160905/Medlink-2026",
         demo: "https://medlink-2026.vercel.app/",
-        image: "/images/MedLink AI Healthcare Showcase.png"
+        image: "/images/MedLink AI Healthcare Showcase.webp"
     },
     {
         id: "sundrip",
@@ -63,7 +63,7 @@ const projects = [
         tags: ["React", "Node.js", "Express.js", "MongoDB", "Razorpay"],
         github: "https://github.com/Atharva-160905/SunDrip",
         demo: "https://sun-drip.vercel.app/",
-        image: "/images/SunDrip E-Commerce Laptop Mockup.png"
+        image: "/images/SunDrip E-Commerce Laptop Mockup.webp"
     },
     {
         id: "aimersmedia",
@@ -83,7 +83,7 @@ const projects = [
         tags: ["Next.js", "GSAP", "React", "Tailwind CSS", "Vercel"],
         github: "https://github.com/Atharva-160905",
         demo: "https://aimers-media.vercel.app/",
-        image: "/images/Aimers Media Laptop Showcase.png"
+        image: "/images/Aimers Media Laptop Showcase.webp"
     },
     {
         id: "robotic-joint-care",
@@ -103,7 +103,7 @@ const projects = [
         tags: ["Next.js", "React", "Tailwind CSS", "UI/UX Architecture", "Vercel"],
         github: "https://github.com/Atharva-160905",
         demo: "https://dr-kasliwal.vercel.app/",
-        image: "/images/Robotic Joint Care Institute Website Mockup.png"
+        image: "/images/Robotic Joint Care Institute Website Mockup.webp"
     },
     {
         id: "webrtc",
@@ -123,7 +123,7 @@ const projects = [
         tags: ["JavaScript", "WebRTC", "PeerJS", "Real-Time", "P2P"],
         github: "https://github.com/Atharva-160905/WebRtc",
         demo: "https://web-rtc-rose.vercel.app/",
-        image: "/images/WebRtc.png"
+        image: "/images/WebRtc.webp"
     },
     {
         id: "ecell",
@@ -143,7 +143,7 @@ const projects = [
         tags: ["React", "Three.js", "Tailwind CSS", "JavaScript", "GSAP"],
         github: "https://github.com/Vedant159357/Ecell-2026",
         demo: "https://iicecellskncoe.com/",
-        image: "/images/E-Cell SKNCOE Web Showcase.png"
+        image: "/images/E-Cell SKNCOE Web Showcase.webp"
     }
 ];
 
@@ -152,6 +152,16 @@ export default function Projects() {
     const [viewMode, setViewMode] = useState('spotlight'); // 'spotlight' | 'grid'
 
     const activeProject = projects[activeIndex];
+
+    // Preload all lightweight WebP images in background for instant zero-latency switching
+    useEffect(() => {
+        projects.forEach((proj) => {
+            if (proj.image) {
+                const img = new Image();
+                img.src = proj.image;
+            }
+        });
+    }, []);
 
     const nextProject = () => {
         setActiveIndex((prev) => (prev + 1) % projects.length);
@@ -371,6 +381,9 @@ export default function Projects() {
                                                         <img
                                                             src={activeProject.image}
                                                             alt={activeProject.title}
+                                                            loading="eager"
+                                                            fetchPriority="high"
+                                                            decoding="async"
                                                             className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-102"
                                                         />
                                                         {activeProject.demo && (
@@ -491,6 +504,8 @@ export default function Projects() {
                                                 <img
                                                     src={proj.image}
                                                     alt={proj.title}
+                                                    loading="lazy"
+                                                    decoding="async"
                                                     className="w-full h-full object-contain group-hover:scale-103 transition-transform duration-300"
                                                 />
                                             ) : (
